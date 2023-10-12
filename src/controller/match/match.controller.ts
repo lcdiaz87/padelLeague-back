@@ -1,10 +1,11 @@
 import { Body, Controller, Delete, Get, Post, Put } from '@nestjs/common';
-import { CreateMatchDto } from './dto/create-match-dto/create-match-dto';
+import { MatchDto } from 'src/dto/match-dto/match-dto';
 
 @Controller('match')
 export class MatchController {
+    
     @Post()
-    create(@Body() createMatchDto: CreateMatchDto){
+    create(@Body() matchDto: MatchDto){
         return 'This action adds a new match';
     }
 
@@ -14,12 +15,11 @@ export class MatchController {
     }
 
     @Put(':id')
-    update(@Body() updateMatchDto: CreateMatchDto){
+    update(@Body() matchDto: MatchDto){
         return 'update match';
     }
 
     @Delete(':id')
     delete(){
         return 'delete match';
-    }
-}
+    }}

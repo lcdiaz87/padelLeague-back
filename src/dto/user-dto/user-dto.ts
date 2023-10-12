@@ -1,4 +1,4 @@
-export class CreateUserDto {
+export class UserDto {
     readonly name: string;
     readonly surname: string;
     readonly appName: string;
