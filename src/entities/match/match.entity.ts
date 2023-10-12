@@ -7,7 +7,7 @@ export class Match {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({unique: true})
+    @Column()
     datetime: Date;
 
     @ManyToOne(() => User)
@@ -21,10 +21,6 @@ export class Match {
   
     @ManyToOne(() => User)
     playerB2: User;
-
-    // @ManyToMany(() => User, user => user.matches)
-    // @JoinTable()
-    // players: User[];
 
     @Column()
     teamA: number;
