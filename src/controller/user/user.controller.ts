@@ -19,7 +19,7 @@ export class UserController {
     };
 
     @Get()
-    getAll() {
+    getAll(@Res() response) {
        this.userService.getAll().then(users => {
             console.log(users);
             response.status(HttpStatus.OK).json(users);

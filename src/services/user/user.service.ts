@@ -9,7 +9,7 @@ export class UserService {
     constructor( @InjectRepository(User) private readonly userRepository: Repository<User>){}
 
     async getAll(): Promise<User[]>{
-        return await this.userRepository.find();
+        return await this.userRepository.find({relations: ["playerA1", "playerA2", "playerB1", "playerB2"]});
     }
 
 
@@ -19,8 +19,7 @@ export class UserService {
 
     async update(idUser: number, userDto: UserDto): Promise<User>{
         const userToBeUpdated: User = await this.userRepository.findOne({where:{id: idUser}});
-        userToBeUpdated.name = userDto.name;
-        userToBeUpdated.surname = userDto.surname;
+        userToBeUpdated.fullName = userDto.fullName;
         userToBeUpdated.appName = userDto.appName;
         return await this.userRepository.save(userToBeUpdated);
     }

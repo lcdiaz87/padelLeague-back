@@ -1,5 +1,4 @@
 export class UserDto {
-    readonly name: string;
-    readonly surname: string;
+    readonly fullName: string;
     readonly appName: string;
 }

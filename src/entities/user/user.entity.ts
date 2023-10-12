@@ -8,10 +8,7 @@ export class User {
     id: number;
 
     @Column()
-    name: string;
-
-    @Column()
-    surname: string;
+    fullName: string;
     
     @Column({unique: true})
     appName: string;
