@@ -19,7 +19,7 @@ import { User } from './entities/user/user.entity';
       password: 'root1234',
       database: 'padelLeague',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
+      synchronize: false,
     }),
     TypeOrmModule.forFeature([User, Match]),
   ],
