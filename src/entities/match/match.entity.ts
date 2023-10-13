@@ -23,8 +23,8 @@ export class Match {
     playerB2: User;
 
     @Column()
-    teamA: number;
+    scoreA: number;
 
     @Column()
-    teamB: number;
+    scoreB: number;
 }

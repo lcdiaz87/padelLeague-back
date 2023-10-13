@@ -9,7 +9,7 @@ export class UserService {
     constructor( @InjectRepository(User) private readonly userRepository: Repository<User>){}
 
     async getAll(): Promise<User[]>{
-        return await this.userRepository.find({relations: ["playerA1", "playerA2", "playerB1", "playerB2"]});
+        return await this.userRepository.find({relations: ["playerA1", "playerA2", "playerB1", "playerB2"], order: { fullName: 'ASC'}});
     }
 
 
@@ -27,9 +27,4 @@ export class UserService {
     async delete(idUser: number): Promise<any>{
         return await this.userRepository.delete(idUser);
     }
-
-
-
-    
-
 }
