@@ -10,13 +10,10 @@ export class MatchController {
     async create(@Body() matchDto: MatchDto, @Res() response) {
       try {
         const match = await this.matchService.create(matchDto);
-        console.log(match);
         response.status(HttpStatus.CREATED).json(match);
       } catch (error) {
-        console.log(error);
-        response.status(HttpStatus.FORBIDDEN).json({ message: 'Error. Intentale de nuevo.' });
+        response.status(HttpStatus.FORBIDDEN).json({ message: 'Error. Inténtalo de nuevo.' });
       } finally {
-        console.log('finally');
       }
     }
   
@@ -24,13 +21,10 @@ export class MatchController {
     async getAll(@Res() response) {
       try {
         const matches = await this.matchService.getAll();
-        console.log(matches);
         response.status(HttpStatus.OK).json(matches);
       } catch (error) {
-        console.log(error);
         response.status(HttpStatus.FORBIDDEN).json({ message: 'Error in getAll' });
       } finally {
-        console.log('finally');
       }
     }
   
@@ -38,13 +32,10 @@ export class MatchController {
     async delete(@Res() response, @Param('id') idMatch: number) {
       try {
         const res = await this.matchService.delete(idMatch);
-        console.log(res);
         response.status(HttpStatus.OK).json(res);
       } catch (error) {
-        console.log(error);
         response.status(HttpStatus.FORBIDDEN).json({ message: 'Error in delete' });
       } finally {
-        console.log('finally');
       }
     }    
     

@@ -16,8 +16,6 @@ export class MatchService {
 
   async create(matchDto: MatchDto): Promise<Match> {
     const match: Match = MatchDto.toEntity(matchDto);
-    console.log(match);
-    match.datetime = undefined;
     return await this.matchRepository.save(match);
   }
 
