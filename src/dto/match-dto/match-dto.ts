@@ -2,7 +2,6 @@ import { Match } from "src/entities/match/match.entity";
 import { UserDto } from "../user-dto/user-dto";
 
 export class MatchDto {
-    // Propiedades de MatchDto
     id?: number;
     datetime?: Date;
     playerA1?: UserDto;

@@ -11,7 +11,7 @@ export class MatchService {
   ) {}
 
   async getAll(): Promise<Match[]> {
-    return await this.matchRepository.find();
+    return await this.matchRepository.find({relations: ["playerA1", "playerA2", "playerB1", "playerB2"]});
   }
 
   async create(matchDto: MatchDto): Promise<Match> {
